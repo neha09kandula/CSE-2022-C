@@ -1,0 +1,15 @@
+public class Overloading{
+	public static void main(String[] args){
+		Overloading obj1=new Overloading();
+		System.out.println(obj1.sum(5,3));
+		System.out.println(obj1.sum(5,3,5));
+		System.out.println(obj1.sum('5','4'));
+}
+public int sum(int x,int y){
+return (x+y);
+}
+public int sum(int a,int b, int c){
+return (a+b+c);
+}
+
+}

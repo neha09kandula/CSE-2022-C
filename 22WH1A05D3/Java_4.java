@@ -1,0 +1,37 @@
+package Java_22wh1a05d3;
+
+public class Java_4 {
+
+	public static void main(String[] args) {
+		String str="Hello";
+
+		String str1="hello";
+
+		String str2="kyathi";
+
+		String str3="Kyathi";
+
+	
+
+		char[] charArray= new char[10];
+
+	     str2.getChars(2,6,charArray,0);
+
+		System.out.println(str.equals(str1));
+
+		System.out.println(str.equalsIgnoreCase(str1));
+
+		System.out.println(str1.compareTo(str3));
+
+		System.out.println(str2.compareTo(str3));
+
+		System.out.println(str.indexOf("l"));
+
+		System.out.println(str.concat(str2));
+
+		System.out.println(str.charAt(3));
+
+		System.out.println(charArray);
+	}
+
+}

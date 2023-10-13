@@ -1,18 +1,19 @@
 import java.util.*;
-public class even_odd
+class factorial
 {
 public static void main(String args[])
 {
 	System.out.println("enter a number");
 	Scanner input=new Scanner(System.in);
 	int num=input.nextInt();
-	if(num%2==0)
-	{
-		System.out.println("it is even");
-	}
-	else
-	{
-		System.out.println("it is odd");
-	}
+	int i;
+	int fact=1;
+
+	for(i=num;i>0;i--)
+{
+	fact = fact*i;
+	
+}
+System.out.println("the factorial is "+fact);
 }
 }

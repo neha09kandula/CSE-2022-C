@@ -1,16 +1,8 @@
-import java.util.*;
-class Main {
-public static void main(String args[])
+import java.util*;
+class even_odd{
+public static main void(string args[])
 {
-Scanner input=new Scanner (System.in);
-System.out.println("enter the number :");
-int num =input.nextInt();
-if(num % 2 == 0) {
-System.out.println("the number is even");
- }
-else {
- System.out.println("the number is odd");
-}
-input.close();
+	system.out.println("enter the number":)
+	scanner input=new scanner(system.in)
 }
 }

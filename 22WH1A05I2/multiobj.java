@@ -1,0 +1,14 @@
+public class multiobj
+{
+  int x=5;
+  int y=24;
+  public static void main(String args[])
+  {
+    multiobj obj1=new multiobj();
+    System.out.println(obj1.x);
+
+    multiobj obj2=new multiobj();
+    System.out.println(obj2.y);
+   
+  }
+}

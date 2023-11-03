@@ -31,22 +31,5 @@ public class frames {
 
 }
 }
-public class message extends frames {
-	message(){
-	         addWindowListener(new WindowAdapter()
-			{
-			public void windowClosing(WindowEvent e) {
-		    System.exit(0);
-	        }
-	
-	        });
-            }
-			public void paint(Graphics g) {
-			this.setBackground(new Color(100,20,20));
-			Font f=new Font("arial",Font.BOLD+Font.ITALIC)
-			g.setFont(f);
-				
-			}
-			
-}
+
 

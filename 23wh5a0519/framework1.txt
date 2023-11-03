@@ -1,0 +1,27 @@
+package frame;
+import java.awt.Frame;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Component;
+public class Firstgui {
+ public static void main(String[] args) {
+	 Frame f=new Frame("my frame");
+	 f.setSize(400,400);
+	 f.add(new MyComponent());
+	 f.setVisible(true);
+
+ }
+static class MyComponent extends Component{
+	 public void paint(Graphics g) {
+	    g.setColor(Color.BLUE);
+		 g.drawRect(109, 252, 100,252);
+		 g.fillRect(109,252, 100, 252);
+		 g.setColor(Color.RED);
+		 g.drawArc(100, 100, 190, 180, 154, 154);
+		 g.setColor(Color.RED);
+		 g.setFont(getFont());
+ g.drawString("CHERMI",70, 45);
+		g.setColor(Color.RED);
+	 }
+ }
+}

@@ -1,21 +1,20 @@
 package csec2022;
 
-class inheritance {
-	public void display()
-	System.out.println("i am meghana");
+public class inheritance {
+	public void display() {
+		System.out.println("iam an animal parent class");
+	}
 }
-class name extends inheritance {
-	public void display()
-	System.out.println("meghana");
+class subchild extends inheritance{
+	public void display() {
+		System.out.println("iam sub class");
 	}
-public void printmessage()
-   display();
- public class main() 
-{
-	public static void main(String[args]) {
-		name m1=new name();
+	public void message() {
 		display();
-		super.display();
-		
-	}
+}
+public static void main(String[] args) {
+	subchild d=new subchild();
+	//display();
+	super.display();
+}
 }

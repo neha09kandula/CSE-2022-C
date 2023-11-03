@@ -1,26 +1,23 @@
 import java.util.*;
-class largest
-{
-public static void main(String args[])
-{
-	System.out.println("enter a number a");
-	System.out.println("enter a number b");
-	System.out.println("enter a number c");
-	Scanner input=new Scanner(System.in);
-	int a= input.nextInt();
-	int b= input.nextInt();
-	int c = input.nextInt();
-	if(a>b && a>c)
-{
-	System.out.println("a is the largest number");
+class largest{
+public int compare(int x,int y,int z){
+if(x>y && x>z){
+return(x);}
+else if(x<y && y>z){
+return(y);}
+else{
+return(z);}
 }
-	else if(b>c)
-{
-	System.out.println("b is the largest number");
-}
-	else
-{
-	System.out.println("c is the largest number");
-}
-}
+public static void main(String args[]){
+System.out.println("ENTER THE NUMBERS TO COMPARE:");
+Scanner input=new Scanner(System.in);
+System.out.println("ENTER FIRST NUMBER:");
+int l = input.nextInt();
+System.out.println("ENTER SECOND NUMBER:");
+int m = input.nextInt();
+System.out.println("ENTER THIRD NUMBER:");
+int n = input.nextInt();
+largest obj = new largest();
+System.out.println("THE LARGEST NUMBER IS: "+obj.compare(l,m,n));
+input.close();}
 }

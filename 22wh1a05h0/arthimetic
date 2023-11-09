@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+class Codechef
+{
+	public static void main (String[] args)
+	{
+		// your code goes here
+		Scanner read = new Scanner(System.in);
+		int a = 35;
+		int b = 23;
+		int sum = 58;
+		int diff = 12;
+		System.out.println("Sum is: " + sum);
+		System.out.println("Difference is: " + diff);
+	}
+}

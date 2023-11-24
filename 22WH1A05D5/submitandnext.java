@@ -17,13 +17,11 @@ import java.awt.event.*;
 	        a.setBounds(190, 200, 80, 50);
 	        b.setBounds(80, 200, 80, 50); 
 	        
-	        a.setBackground(Color.red);
-	        b.setBackground(Color.green);
 	        
 
-	        b.addActionListener(new ActionListener() { 
+	        a.addActionListener(new ActionListener() { 
 	            public void actionPerformed(ActionEvent e) {
-	                
+	                f.dispose();
 	            }
 	        });
 

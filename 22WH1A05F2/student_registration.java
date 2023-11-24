@@ -1,19 +1,16 @@
 package cse225f2;
 import java.awt.event.*;
 import java.awt.*;
-public class student_registration {
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		public class window extends Frame{
-			window()
-			{
+public class student_registration
+{
+		public static class window extends Frame{
+			window(){
 				addWindowListener(new WindowAdapter()
-				{
-					public void windowClosing(WindowEvent e)
-					{
+						{
+					public void windowClosing(WindowEvent e) {
 						dispose();
 					}
-				});
+						});
 				setTitle("Student Registration");
 				setSize(1800,1600);
 				setLayout(null);
@@ -52,4 +49,3 @@ public class student_registration {
 			}
 		}
 	}
-}

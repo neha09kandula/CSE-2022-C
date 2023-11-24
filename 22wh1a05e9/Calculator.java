@@ -17,7 +17,7 @@ public class grids extends WindowAdapter {
         Panel buttonPanel = new Panel();
         buttonPanel.setLayout(new GridLayout(4, 4, 5, 5));
 
-        // ... (Button initialization remains the same)
+       
         buttonPanel.add(new Button("1"));
         buttonPanel.add(new Button("2"));
         buttonPanel.add(new Button("3"));

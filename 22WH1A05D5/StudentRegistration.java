@@ -2,56 +2,97 @@ package frames;
 import java.awt.*;
 import java.awt.event.*;
 
-public class StudentRegistration extends Frame {
-    TextField nameField, emailField,ageField,yearField,branchField;
-    Button submitButton,stopButton;
+public class calculator extends Frame {
+    TextField enterField ;
+    Button aButton,bButton,cButton,dButton,eButton,fButton,gButton,hButton,iButton,jButton,kButton,lButton,mButton,nButton,oButton,pButton,qButton,rButton,sButton,tButton,uButton;
 
-    public StudentRegistration() {
-        setTitle("Student Registration Form");
+    public calculator() {
+        setTitle("Calculator");
         setSize(400, 400);
         setLayout(null);
-        Label nameLabel = new Label("Name");
-        Label emailLabel = new Label("email");
-        Label ageLabel = new Label("age");
-        Label yearLabel = new Label("year");
-        Label branchLabel = new Label("branch");
+        Label enterLabel = new Label("Enter");
         
-        nameField = new TextField();
-        emailField = new TextField();
-        ageField= new TextField();
-        yearField = new TextField();
-        branchField = new TextField();
-        submitButton = new Button("Submit");
-        stopButton = new Button("Stop");
+        enterField = new TextField();
+        aButton = new Button("7");
+        bButton = new Button("8");
+        cButton = new Button("9");
+        dButton = new Button("DEL");
+        eButton = new Button("AC");
+        fButton = new Button("4");
+        gButton = new Button("5");
+        hButton = new Button("6");
+        iButton = new Button("*");
+        jButton = new Button("/");
+        kButton = new Button("1");
+        lButton = new Button("2");
+        mButton = new Button("3");
+        nButton = new Button("+");
+        oButton = new Button("-");
+        pButton = new Button("0");
+        qButton = new Button(".");
+        rButton = new Button("*10^x");
+        sButton = new Button("ANS");
+        tButton = new Button("=");
         
-        nameLabel.setBounds(50,30,80,20);
-        emailLabel.setBounds(50,80,80,20);
-        ageLabel.setBounds(50,130,80,20);
-        yearLabel.setBounds(50,180,80,20);
-        branchLabel.setBounds(50,230,80,20);
+        enterLabel.setBounds(50,30,80,20);
         
-        nameField.setBounds(50, 50, 200, 30);
-        emailField.setBounds(50, 100, 200, 30);
-        ageField.setBounds(50, 150, 200, 30);
-        yearField.setBounds(50, 200, 200, 30);
-        branchField.setBounds(50, 250, 200, 30);
-        submitButton.setBounds(50, 300, 200, 30);
-        stopButton.setBounds(50, 340, 200, 30);
+        enterField.setBounds(50, 50, 190, 30);
         
-        add(nameLabel);
-        add(emailLabel);
-        add(ageLabel);
-        add(yearLabel);
-        add(branchLabel);		
-        add(nameField);
-        add(emailField);
-        add(ageField);
-        add(yearField);
-        add(branchField);
-        add(submitButton);
-        add(stopButton);
+        aButton.setBounds(50, 100, 30, 30);
+        bButton.setBounds(90, 100, 30, 30);
+        cButton.setBounds(130, 100, 30, 30);
+        dButton.setBounds(170, 100, 30, 30);
+        eButton.setBounds(210, 100, 30, 30);
+        fButton.setBounds(50, 130, 30, 30);
+        gButton.setBounds(90, 130, 30, 30);
+        hButton.setBounds(130, 130, 30, 30);
+        iButton.setBounds(170, 130, 30, 30);
+        jButton.setBounds(210, 130, 30, 30);
+        kButton.setBounds(50, 160, 30, 30);
+        lButton.setBounds(90, 160, 30, 30);
+        mButton.setBounds(130, 160, 30, 30);
+        nButton.setBounds(170, 160, 30, 30);
+        oButton.setBounds(210, 160, 30, 30);
+        pButton.setBounds(50, 190, 30, 30);
+        qButton.setBounds(90, 190, 30, 30);
+        rButton.setBounds(130, 190, 30, 30);
+        sButton.setBounds(170, 190, 30, 30);
+        tButton.setBounds(210, 190, 30, 30);
         
-        submitButton.addActionListener(new ActionListener() {
+        
+        dButton.setBackground(Color.pink);
+        eButton.setBackground(Color.pink);
+        iButton.setBackground(Color.pink);       
+        jButton.setBackground(Color.pink);
+        nButton.setBackground(Color.pink);
+        oButton.setBackground(Color.pink);
+        sButton.setBackground(Color.pink);
+        tButton.setBackground(Color.pink);       
+   
+        add(enterLabel);	
+        add(enterField);
+        add(aButton);
+        add(bButton);
+        add(cButton);
+        add(dButton);
+        add(eButton);
+        add(fButton);
+        add(gButton);
+        add(hButton);
+        add(iButton);
+        add(jButton);
+        add(kButton);
+        add(lButton);
+        add(mButton);
+        add(nButton);
+        add(oButton);
+        add(pButton);
+        add(qButton);
+        add(rButton);
+        add(sButton);
+        add(tButton);
+        
+        tButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
             }
         });
@@ -65,6 +106,6 @@ public class StudentRegistration extends Frame {
     }
 
     public static void main(String[] args) {
-        new StudentRegistration();
+        new calculator();
     }
 }

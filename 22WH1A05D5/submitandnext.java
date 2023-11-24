@@ -30,6 +30,14 @@ import java.awt.event.*;
 	                f.dispose();
 	            }
 	        });
+	        
+	        b.addActionListener(new ActionListener() { 
+	            public void actionPerformed(ActionEvent e) {
+	                // Create a new instance of the window class and show it
+	                submitandnext newWindow = new submitandnext();
+	                newWindow.setVisible(true);
+	            }
+	        });
 	    }
 
 	    public static void main(String[] args) {

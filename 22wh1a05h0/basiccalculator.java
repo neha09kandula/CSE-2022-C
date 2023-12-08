@@ -41,11 +41,7 @@ public class basiccalculator extends WindowAdapter {
 		t2.setBounds(110,115,100,20);
 		t2.setVisible(true);
 		
-		TextField t3 = new TextField();
-		f.add(t3);
-		t3.setSize(50,50);
-		t3.setBounds(110,217,100,20);
-		t3.setVisible(true);
+		
 		
 		Button b1 = new Button("ADD");
 		f.add(b1);
@@ -58,14 +54,14 @@ public class basiccalculator extends WindowAdapter {
 				String s1 = t1.getText();
 				String s2 = t2.getText();
 				if(s1.isEmpty()||s2.isEmpty()) {
-					t3.setText("please enter the data");
+					l3.setText("please enter the data");
 				}
 				else {
 					int a = Integer.parseInt(s1);
 					int b = Integer.parseInt(s2);
 					int c = a+b;
 					String result = String.valueOf(c);
-					t3.setText(result);
+					l3.setText("total: "+result);
 				}
 			}
 		});
@@ -82,14 +78,14 @@ public class basiccalculator extends WindowAdapter {
 				String s1 = t1.getText();
 				String s2 = t2.getText();
 				if(s1.isEmpty()||s2.isEmpty()) {
-					t3.setText("please enter the data");
+					l3.setText("please enter the data");
 				}
 				else {
 					int a = Integer.parseInt(s1);
 					int b = Integer.parseInt(s2);
 					int c = a-b;
 					String result = String.valueOf(c);
-					t3.setText(result);
+					l3.setText("total: "+result);
 				}
 			}
 		});
@@ -105,14 +101,14 @@ public class basiccalculator extends WindowAdapter {
 				String s1 = t1.getText();
 				String s2 = t2.getText();
 				if(s1.isEmpty()||s2.isEmpty()) {
-					t3.setText("please enter the data");
+					l3.setText("please enter the data");
 				}
 				else {
 					int a = Integer.parseInt(s1);
 					int b = Integer.parseInt(s2);
 					int c = a*b;
 					String result = String.valueOf(c);
-					t3.setText(result);
+					l3.setText("total: "+result);
 				}
 			}
 		});
@@ -128,14 +124,14 @@ public class basiccalculator extends WindowAdapter {
 				String s1 = t1.getText();
 				String s2 = t2.getText();
 				if(s1.isEmpty()||s2.isEmpty()) {
-					t3.setText("please enter the data");
+					l3.setText("please enter the data");
 				}
 				else {
 					int a = Integer.parseInt(s1);
 					int b = Integer.parseInt(s2);
 					int c = a/b;
 					String result = String.valueOf(c);
-					t3.setText(result);
+					l3.setText("total: "+result);
 				}
 			}
 		});

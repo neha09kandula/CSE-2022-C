@@ -33,13 +33,22 @@ import java.awt.event.*;
 	        
 	        b.addActionListener(new ActionListener() { 
 	            public void actionPerformed(ActionEvent e) {
-	                // Create a new instance of the window class and show it
-	                submitandnext newWindow = new submitandnext();
-	                newWindow.setVisible(true);
+	                Frame f2 = new Frame("New Frame");
+	                f2.setSize(400,400);
+	                f2.setVisible(true);
+	                Button c = new Button("Button");
+	                f2.add(c);
+            		c.setBounds(190, 200, 80, 50);
+            		c.setBackground(RED);
+            		c.addActionListener(new ActionListener() { 
+        	            public void actionPerformed(ActionEvent e) {
+        	                f2.dispose(); 
+        	            }
+        	        });
 	            }
 	        });
 	    }
-
+	            		
 	    public static void main(String[] args) {
 	        new submitandnext(); 
 	    }

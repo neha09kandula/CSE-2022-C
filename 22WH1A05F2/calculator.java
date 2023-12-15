@@ -1,70 +1,90 @@
 package cse225f2;
-import java.awt.event.*;
 import java.awt.*;
-public class calculator{
-public static class window extends Frame
+import java.awt.event.*;
+public class calculator extends Frame implements ActionListener
 {
-	window()
+	Label l1,l2,l3,l4,l5,l6;
+	TextField t1,t2;
+	Button b;
+	calculator()
 	{
-		addWindowListener(new WindowAdapter()
+		setTitle("Calculator");
+		setSize(1800,1600);
+		setLayout(null);
+		setVisible(true);
+		setBackground(Color.LIGHT_GRAY);
+		l1 = new Label("Enter first number : ");
+		l1.setBounds(200, 100, 500, 30);
+		l1.setFont(new Font("Arial",Font.BOLD,30));
+		add(l1);
+		l2 = new Label("Enter second number : ");
+		l2.setBounds(200, 200, 500, 30);
+		l2.setFont(new Font("Arial",Font.BOLD,30));
+		add(l2);
+		l3 = new Label("");
+		l3.setBounds(200, 300, 700, 30);
+		l3.setFont(new Font("Arial",Font.BOLD,30));
+		add(l3);
+		l4 = new Label("");
+		l4.setBounds(200, 400, 700, 30);
+		l4.setFont(new Font("Arial",Font.BOLD,30));
+		add(l4);
+		l5 = new Label("");
+		l5.setBounds(200, 500, 700, 30);
+		l5.setFont(new Font("Arial",Font.BOLD,30));
+		add(l5);
+		l6 = new Label("");
+		l6.setBounds(200, 600, 700, 30);
+		l6.setFont(new Font("Arial",Font.BOLD,30));
+		add(l6);
+		t1 = new TextField();
+		t1.setBounds(800, 100, 450, 50);
+		add(t1);
+		t2 = new TextField();
+		t2.setBounds(800, 200,450, 50);
+		add(t2);
+		b = new Button("SHOW RESULT");
+		b.setBounds(650, 800, 500, 75);
+		b.setFont(new Font("Arial",Font.BOLD,30));
+		b.setBackground(Color.WHITE);
+		b.addActionListener(this);
+		add(b);
+		this.addWindowListener(new WindowAdapter() 
 		{
-			public void windowClosing(WindowEvent e)
+			public void windowClosing(WindowEvent we) 
 			{
-				dispose();
+				System.exit(0);
 			}
 		});
-		setTitle("Calculator");
-		setSize(1200,1600);
-		setLayout(null);
-		Label l1 = new Label("CALCULATOR");
-		l1.setFont(new Font("Arial",Font.BOLD,30));
-		l1.setBounds(500,75,600,200);
-		add(l1);
-		Button t1 = new Button("1");
-		t1.setBounds(300, 400, 200, 100);
-		add(t1);
-		Button t2 = new Button("4");
-		t2.setBounds(300, 500, 200, 100);
-		add(t2);
-		Button t3 = new Button("7");
-		t3.setBounds(300, 600, 200, 100);
-		add(t3);
-		Button t4 = new Button("2");
-		t4.setBounds(500, 400, 200, 100);
-		add(t4);
-		Button t5 = new Button("5");
-		t5.setBounds(500, 500, 200, 100);
-		add(t5);
-		Button t6 = new Button("8");
-		t6.setBounds(500, 600, 200, 100);
-		add(t6);
-		Button t7 = new Button("3");
-		t7.setBounds(700, 400, 200, 100);
-		add(t7);
-		Button t8 = new Button("6");
-		t8.setBounds(700, 500, 200, 100);
-		add(t8);
-		Button t9 = new Button("9");
-		t9.setBounds(700, 600, 200, 100);
-		add(t9);
-		Button b1 = new Button("+");
-		b1.setBounds(300,700,200,100);
-		add(b1);
-		Button b2 = new Button("-");
-		b2.setBounds(500,700,200,100);
-		add(b2);
-		Button b3 = new Button("=");
-		b3.setBounds(700,700,200,100);
-		add(b3);
-		TextField T = new TextField();
-		T.setBounds(300,300,600,100);
-		add(T);
-		
-		setVisible(true);
 	}
-
-	public static void main(String args[]) {
-		new window();
+	public void actionPerformed(ActionEvent e) 
+	{
+		String s1 = t1.getText();
+		String s2 = t2.getText();
+		if(s1.isEmpty() || s2.isEmpty()) 
+		{
+			l4.setText("NO DATA IS ENTERED");
+		}
+		else 
+		{
+			int a = Integer.parseInt(s1);
+			int b = Integer.parseInt(s2);
+			int c = a+b;
+			int d = a-b;
+			int p = a*b;
+			int f = a/b;
+			String sum = String.valueOf(c);
+			l3.setText("ADDITION: "+sum);
+			String sub = String.valueOf(d);
+			l4.setText("SUBTRACTION: "+sub);
+			String mul = String.valueOf(p);
+			l5.setText("MULTIPLICATION: "+mul);
+			String div = String.valueOf(f);
+			l6.setText("DIVISION: "+div);
+		}
 	}
-}
+	public static void main(String[] args) 
+	{
+		new calculator();
+	}
 }

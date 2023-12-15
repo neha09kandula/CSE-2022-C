@@ -1,56 +1,65 @@
-package Frames;
+package frames;
+
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.ActionEvent;
 
-class calculator extends WindowAdapter{
+public class calculator extends WindowAdapter implements ActionListener {
 	Frame f;
-		calculator() {
-			  f=new Frame("Hello.,");
-			  f.setSize(1400,1400);
-			  f.setBounds(10,10,900,900);
-			  f.addWindowListener(this);
-			  f.setVisible(true);
-			  f.setLayout(new GridLayout(3,3,300,300));
-			  Button b1 = new Button("1");
-			  f.add(b1);
-			  Button b2 = new Button("2");
-			  f.add(b2);
-			  Button b3 = new Button("3");
-			  f.add(b3);
-			  Button b4 = new Button("4");
-			  f.add(b4);
-			  Button b5 = new Button("5");
-			  f.add(b5);
-			  Button b6 = new Button("6");
-			  f.add(b6);
-			  Button b7 = new Button("7");
-			  f.add(b7);
-			  Button b8 = new Button("8");
-			  f.add(b8);
-			  Button b9 = new Button("9");
-			  f.add(b9);
-			  
+	Button b1;
+	TextField t1,t2;
+	Label l1,l2,l3;
+	calculator(){
+		f= new Frame("Hello calculator!!!...");
+		f.setSize(500,500);
+		f.setLayout(null);
+		f.addWindowListener(this);
+		f.setVisible(true);
+		t1 = new TextField(" ");
+		t1.setBounds(140, 200, 200, 20);
+        f.add(t1);
+        l1 = new Label("first value:");
+        l1.setBounds(60, 200, 200, 20);
+        f.add(l1);
+        l2= new Label("Second valie:");
+        l2.setBounds(80,230,60,20);
+        f.add(l2);
+        t2 = new TextField(" ");
+        t2.setBounds(140,230,200,20);
+        f.add(t2);
+        l3= new Label();
+        l3.setBounds(100,230,60,20);
+        f.add(l3);
+        b1 = new Button("Click me");
+        f.add(b1);
+        b1.setBounds(150, 150, 100, 30);
+        b1.addActionListener(this);
+        
+	}
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==b1)
+		{
+			String s1=t1.getText();
+			String s2=t2.getText();
+			if(s1.isEmpty() || s2.isEmpty()) {
+				l3.setText("Plese enter the data");
+			}
+			else
+			{
+				int a=Integer.parseInt(s1);
+				int b= Integer.parseInt(s2);
+				int c=a+b;
+				String result=String.valueOf(c);
+				l3.setText("Total:"+ result);
+			}
 		}
-		
+	}
 	public void windowClosing(WindowEvent e) {
 		f.dispose();
 	}
-	
 	public static void main(String[] args) {
 		new calculator();
 	}
 }
-/*import java.awt.*;
-import java.applet.Applet;
-public class ButtonGrid extends Applet {
-    public void init() {
-        setLayout(new GridLayout(3,2));
-        add(new Button("1"));
-        add(new Button("2"));
-        add(new Button("3"));
-        add(new Button("4"));
-        add(new Button("5"));
-        add(new Button("6"));
-    }
-}*/

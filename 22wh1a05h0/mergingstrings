@@ -1,0 +1,10 @@
+package cseb;
+
+public class merge {
+public static void main(String[]args) {
+	String str="hello";
+	String str1="kyathi";
+	String merge=str+" "+str1;
+	System.out.println(merge);
+}
+}

@@ -1,0 +1,33 @@
+package lab_internal_547;
+import java.util.Scanner;
+
+public class Spynumber {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int l;
+        System.out.println("Enter the length of the number");
+        l = sc.nextInt();
+
+        int n[] = new int[l]; // Use the exact size needed for the array
+
+        System.out.println("Enter the digits of the number:");
+        for (int j = 0; j < l; j++) {
+            n[j] = sc.nextInt();
+        }
+
+        int product = 1;
+        int sum = 0;
+
+        for (int i = 0; i < n.length; i++) {
+            product *= n[i];
+            sum += n[i];
+        }
+
+        if (sum == product) {
+            System.out.println("Spy number");
+        } else {
+            System.out.println("Not a spy number");
+        }
+    }
+}

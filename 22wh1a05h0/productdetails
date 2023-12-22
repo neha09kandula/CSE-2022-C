@@ -1,0 +1,44 @@
+package cseb;
+
+
+
+
+import java.util.Scanner;
+
+public class ProductDetails {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String productName;
+        int quantity;
+        double cost;
+        double maxProductValue = 0;
+        
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter details for product :" + (i + 1));
+
+            System.out.print("Product name: ");
+            productName = input.next();
+
+            System.out.print("Quantity: ");
+            quantity = input.nextInt();
+
+            System.out.print("Cost per unit: ");
+            cost = input.nextDouble();
+
+            double productValue = quantity * cost;
+
+            if (productValue > maxProductValue) {
+                maxProductValue = productValue;
+                
+            }
+        }
+
+        System.out.println("\nProduct with the highest value:");
+        System.out.println("Total Value: " + maxProductValue);
+
+        input.close();
+    }
+}
+

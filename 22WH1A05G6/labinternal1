@@ -1,0 +1,41 @@
+package cse225g6;
+
+abstract class Animal {
+    abstract void cats();
+    abstract void dogs();
+}
+
+class Cats extends Animal {
+    void cats() {
+        System.out.println("Cats meow");
+    }
+
+    void dogs() {
+        // 
+    }
+}
+
+class Dogs extends Animal {
+    void cats() {
+        // 
+    }
+
+    void dogs() {
+        System.out.println("Dogs bark");
+    }
+
+    public static void main(String[] args) {
+        Cats catObj = new Cats();
+        Dogs dogObj = new Dogs();
+
+        catObj.cats();
+        catObj.dogs(); 
+
+        dogObj.cats(); 
+        dogObj.dogs();
+    }
+}
+
+
+
+

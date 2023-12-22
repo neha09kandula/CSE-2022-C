@@ -1,0 +1,28 @@
+package cseb;
+
+import java.util.Scanner;
+
+public class area {
+         Scanner input=new Scanner(System.in);
+         
+			float radius=input.nextFloat();
+			int length=input.nextInt();
+			int width=input.nextInt();
+	void carea()
+	{
+	double  area=3.14 * radius*radius;
+	System.out.println(area);
+	
+	}
+	void rarea() {
+		double area1=length*width;
+		System.out.println(area1);
+	}
+	
+public static void main(String[]args) {
+	area obj=new area();
+	obj.carea();
+	obj.rarea();
+}
+
+}

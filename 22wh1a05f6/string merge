@@ -1,0 +1,17 @@
+package lab_internal_547;
+import java.util.Scanner;
+
+public class Stringmerge {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1,str2;
+        System.out.println("Enter the  1st name");
+        str1 = sc.nextLine();
+        System.out.println("Enter the  2nd name");
+        str2 = sc.nextLine();
+        String result;
+        result=str1 + str2;
+        System.out.println(result);
+    }
+}

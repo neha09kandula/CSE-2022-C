@@ -1,0 +1,20 @@
+import java.lang.*;
+public class SPYNUMBER {
+	int a;
+	int b;
+	 int result1=a+b;
+	 int result2=a*b;
+	public static void main(String[] args) {
+		 int a=2;
+		 int b=2;
+		SPYNUMBER add = new SPYNUMBER();
+		SPYNUMBER mul = new SPYNUMBER();
+		System.out.println("the sum of" +a+ "and" +b+ "is:" +add);
+		System.out.println("the product of" +a+ "and" +b+ "is:" +mul);
+	   if(add != mul)
+			System.out.println("true");
+		else 
+			System.out.println("false");
+		}
+
+	}

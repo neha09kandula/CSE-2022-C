@@ -1,31 +1,62 @@
-package internal;
-
+import java.util.Scanner;
+class Weekdays{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the number");
+        int n =sc.nextInt();
+        
+         if(n==1) 
+         {
+             System.out.println(" monday");
+         }
+        else if(n==2)
+        {
+        System.out.println("tuesday");
+        }
+        else if(n==3)
+        {
+        System.out.println("wednesday");
+        }
+        else if(n==4)
+        {
+        System.out.println("thursday");
+        } 
+        else if(n==5)
+        {
+        System.out.println("friday");
+        }
+        else if(n==6)
+        {
+        System.out.println("saturday");
+        }
+        else if(n==7)
+        {
+            System.out.println("sunday");
+        }
+        else
+        {
+            System.out.println(" invalid  day");
+        }
+}
 import java.util.Scanner;
 
-public class palindrome {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Enter a string to check for palindrome");
-		Scanner in = new Scanner(System.in);
-		String s=in.nextLine();
-		int i;
-		String s2=" ";
-		for(i=s.length()-1;i>=0;i--)
-		{
-			s2=s2+s.charAt(i);
-			
-		}
-		System.out.println("Reversed String"+s2);
-		if(s.equals(s2))
-		{
-			System.out.println("It is a palindrome number");
-		}
-		else
-		{
-			System.out.println("It is NOt a palindrome number");
-		}
-
-	}
-
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        int reversedNumber = 0;
+        int originalNumber = number;
+        while (number != 0) {
+            int remainder = number % 10;
+            reversedNumber = reversedNumber * 10 + remainder;
+            number /= 10;
+        }
+        if (originalNumber == reversedNumber) {
+            System.out.println(originalNumber + " is a palindrome number.");
+        } else {
+            System.out.println(originalNumber + " is not a palindrome number.");
+        }
+    }
 }
+

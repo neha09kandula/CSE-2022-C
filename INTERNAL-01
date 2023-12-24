@@ -1,0 +1,27 @@
+abstract class Animals {
+    abstract void cats();
+    abstract void dogs();
+}
+class Cats extends Animals {
+    void cats() {
+        System.out.println("Cats meow");
+    }
+    void dogs() {
+    }
+}
+class Dogs extends Animals {
+    void dogs() {
+        System.out.println("Dogs bark");
+    }
+    void cats() {
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Cats catInstance = new Cats();
+        Dogs dogInstance = new Dogs();
+
+        catInstance.cats();
+        dogInstance.dogs();
+    }
+}

@@ -1,0 +1,44 @@
+import java.util.*;
+public class Student {
+    private String name;
+    private String studentId;
+    private Map<String, Integer> marks;
+    public Student(String name, String studentId, Map<String, Integer> marks) {
+        this.name = name;
+        this.studentId = studentId;
+        this.marks = marks;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getStudentId() {
+        return studentId;
+    }
+    public Map<String, Integer> getMarks() {
+        return marks;
+    }
+    public int getTotalMarks() {
+        return marks.values().stream().mapToInt(Integer::intValue).sum();
+    }
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", studentId='" + studentId + '\'' +
+                ", marks=" + marks +
+                '}';
+    }
+    public static void main(String[] args) {
+        List<Student> students = new ArrayList<>();
+        students.add(new Student("smriti", "S101", Map.of("Math", 90, "Science", 85, "History", 88)));
+        students.add(new Student("deekshitha", "S102", Map.of("Math", 85, "Science", 90, "History", 92)));
+        students.add(new Student("laddu", "S103", Map.of("Math", 88, "Science", 89, "History", 90)));
+        Student studentWithHighestMarks = students.stream()
+                .max(Comparator.comparingInt(Student::getTotalMarks))
+                .orElse(null);
+        if (studentWithHighestMarks != null) {
+            System.out.println("Student with the highest marks is: " + studentWithHighestMarks.getName());
+        } else {
+            System.out.println("No student found!");
+        }
+    }
+}

@@ -1,0 +1,17 @@
+public class Standard{
+    public static void main(String args[]){
+        double num=9;
+        double sqrt=Math.sqrt(num);
+        System.out.println("Square root of the number is "+sqrt);
+        
+        String text="Hello World!";
+        String uppercase=text.toUpperCase();
+        String lowercase=text.toLowerCase();
+        System.out.println("Original string is "+text);
+        System.out.println("Upper case string is "+uppercase);
+        System.out.println("Lower case string is "+lowercase);
+        
+        int textLength=text.length();
+        System.out.println("The length of the text is "+textLength);
+    }
+}

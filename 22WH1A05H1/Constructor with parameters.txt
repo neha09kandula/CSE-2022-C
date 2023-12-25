@@ -1,0 +1,14 @@
+public class Constructor{
+    private int value;
+    public Constructor(int initialValue) {
+        value = initialValue;
+    }
+    public int getValue() {
+        return value;
+    }
+    public static void main(String[] args) {
+        Constructor obj = new Constructor(42);
+        int result = obj.getValue();
+        System.out.println("Value set by the constructor: " + result);
+    }
+}

@@ -1,0 +1,17 @@
+public class MethodOverloading {
+    public void printNumber(int num) {
+        System.out.println("Single parameter method: " + num);
+    }
+    public void printNumbers(int num1, int num2) {
+        System.out.println("Multiple parameter method: " + num1 + ", " + num2);
+    }
+    public void printNumbers(double num1, int num2) {
+        System.out.println("Multiple parameter method: " + num1 + ", " + num2);
+    }
+    public static void main(String[] args) {
+        MethodOverloading example = new MethodOverloading();
+        example.printNumber(10);
+        example.printNumbers(20, 30);
+        example.printNumbers(3.14, 42);
+    }
+}

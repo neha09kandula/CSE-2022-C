@@ -1,0 +1,11 @@
+public class MulObj
+{
+int x=5;
+public static void main(String args[])
+{
+MulObj obj1=new MulObj();
+MulObj obj2=new MulObj();
+System.out.println(obj1.x);
+System.out.println(obj2.x);
+}
+}

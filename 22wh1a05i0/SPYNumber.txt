@@ -11,8 +11,6 @@ public class SpyNumberChecker {
 
         System.out.println("Is it a SPYNUMBER? " + isSpyNumber);
     }
-
-    // Function to check if a number is a SPYNUMBER
     private static boolean isSpyNumber(int number) {
         int sumOfDigits = 0;
         int productOfDigits = 1;
@@ -24,8 +22,6 @@ public class SpyNumberChecker {
             productOfDigits *= digit;
             number /= 10;
         }
-
-        // Check if the sum equals the product
         return sumOfDigits == productOfDigits;
     }
 }

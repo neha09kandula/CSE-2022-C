@@ -1,0 +1,54 @@
+public class Student {
+    private String name;
+    private int studentId;
+    private int[] marks;
+
+    // Constructor
+    public Student(String name, int studentId, int[] marks) {
+        this.name = name;
+        this.studentId = studentId;
+        this.marks = marks;
+    }
+
+    // Method to calculate the total marks
+    private int calculateTotalMarks() {
+        int totalMarks = 0;
+        for (int mark : marks) {
+            totalMarks += mark;
+        }
+        return totalMarks;
+    }
+
+    // Method to find and display the student with the highest score
+    public static String findStudentWithHighestScore(Student[] students) {
+        if (students == null || students.length == 0) {
+            return "No students provided.";
+        }
+
+        Student highestScorer = students[0];
+        for (int i = 1; i < students.length; i++) {
+            if (students[i].calculateTotalMarks() > highestScorer.calculateTotalMarks()) {
+                highestScorer = students[i];
+            }
+        }
+
+        return "Student with the highest score: " + highestScorer.getName();
+    }
+
+    // Getter method for the student's name
+    public String getName() {
+        return name;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        Student[] students = {
+                new Student("Alice", 1, new int[]{90, 85, 95}),
+                new Student("Bob", 2, new int[]{88, 92, 89}),
+                new Student("Charlie", 3, new int[]{78, 85, 92})
+        };
+
+        String result = findStudentWithHighestScore(students);
+        System.out.println(result);
+    }
+}

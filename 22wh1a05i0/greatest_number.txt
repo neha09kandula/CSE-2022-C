@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class GreatestNumber {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking input from the user
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        System.out.print("Enter the third number: ");
+        double num3 = scanner.nextDouble();
+
+        // Finding the greatest number
+        double greatestNumber = findGreatestNumber(num1, num2, num3);
+
+        // Printing the result
+        System.out.println("The greatest number is: " + greatestNumber);
+
+        // Closing the scanner
+        scanner.close();
+    }
+
+    // Function to find the greatest number among three numbers
+    private static double findGreatestNumber(double num1, double num2, double num3) {
+        if (num1 >= num2 && num1 >= num3) {
+            return num1;
+        } else if (num2 >= num1 && num2 >= num3) {
+            return num2;
+        } else {
+            return num3;
+        }
+    }
+}

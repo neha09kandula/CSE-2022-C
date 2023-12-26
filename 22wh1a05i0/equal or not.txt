@@ -2,10 +2,8 @@ import java.util.Scanner;
 
 public class CompareIntegers {
     public static void main(String[] args) {
-        // Create a Scanner object for user input
         Scanner scanner = new Scanner(System.in);
 
-        // Prompt the user to enter four integers
         System.out.println("Enter the first integer:");
         int num1 = scanner.nextInt();
 
@@ -17,11 +15,7 @@ public class CompareIntegers {
 
         System.out.println("Enter the fourth integer:");
         int num4 = scanner.nextInt();
-
-        // Close the Scanner to avoid resource leak
         scanner.close();
-
-        // Check if all four integers are equal
         if (num1 == num2 && num2 == num3 && num3 == num4) {
             System.out.println("Equal");
         } else {

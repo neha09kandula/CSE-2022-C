@@ -1,0 +1,34 @@
+package labinternal1;
+
+
+abstract class Animal
+{
+		abstract void cats();
+		abstract void dogs();
+		
+}
+class Cats extends Animal
+	{
+		public void cats() 
+		{
+			System.out.println("Cats meow");
+		}
+	}
+class Dogs extends Animal
+	{
+		public void dogs() 
+		{
+			System.out.println("Dogs bark");
+		}
+	}
+
+	public class Animal 
+	{
+		public static void main(String[] args)
+		{
+			Cats obj1=new Cats();
+			Dogs obj2=new Dogs();
+			obj1.cats();
+			obj2.dogs();
+		}
+	}

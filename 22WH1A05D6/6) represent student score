@@ -1,0 +1,71 @@
+import java.util.HashMap;
+import java.util.Map;
+
+class Student {
+    private String name;
+    private int studentID;
+    private Map<String, Integer> marks;
+
+    public Student(String name, int studentID) {
+        this.name = name;
+        this.studentID = studentID;
+        this.marks = new HashMap<>();
+    }
+
+    public void addMarks(String subject, int mark) {
+        marks.put(subject, mark);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public static void displayStudentWithHighestScore(Student[] students) {
+        if (students.length == 0) {
+            System.out.println("No students available.");
+            return;
+        }
+        Student highestScorer = students[0];
+
+        for (Student student : students) {
+            int totalMarks = student.getTotalMarks();
+            int highestTotalMarks = highestScorer.getTotalMarks();
+
+            if (totalMarks > highestTotalMarks) {
+                highestScorer = student;
+            }
+        }
+
+        System.out.println("Student with the highest score:");
+        System.out.println("Name: " + highestScorer.getName());
+        System.out.println("Student ID: " + highestScorer.studentID);
+    }
+
+    private int getTotalMarks() {
+        int total = 0;
+        for (int mark : marks.values()) {
+            total += mark;
+        }
+        return total;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student[] students = new Student[3];
+        
+        students[0] = new Student("Alice", 101);
+        students[0].addMarks("Math", 90);
+        students[0].addMarks("Science", 85);
+
+        students[1] = new Student("Bob", 102);
+        students[1].addMarks("Math", 95);
+        students[1].addMarks("Science", 88);
+
+        students[2] = new Student("Charlie", 103);
+        students[2].addMarks("Math", 92);
+        students[2].addMarks("Science", 91);
+
+        Student.displayStudentWithHighestScore(students);
+    }
+}

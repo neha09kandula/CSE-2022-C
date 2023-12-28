@@ -1,0 +1,19 @@
+ import java.lang;
+public class vehicle{
+    public void drive(){
+    System.out.println("Repairing a car...");
+}
+}
+class car extends vehicle{
+   public void drive(){
+        System.out.println("Repairing a car...");
+    }
+}
+public class driver{
+    public static void main(String[] args){
+        Vehicle v = new Vehicle();
+        Car c = new Car();
+        Vehicle.drive();
+        Car.drive();
+    }
+}

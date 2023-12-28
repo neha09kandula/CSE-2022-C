@@ -1,21 +1,34 @@
-import java.util.*;
-class main{
-public static void main(String args[])
-{
+package mypackage;
+
+import java.util.Scanner;
+
+public class largest {
+     public void num(int a,int b,int c)
+     {
+    	 if(a>b && a>c )
+    	 {
+    		 System.out.println("Largest Number is "+a);
+    	 }
+    	 else if(b>c)
+    	 {System.out.println("Largest Number is "+b);
+    	 
+    	 }
+    	 else
+    	 {
+    		 System.out.println("Largest Number is "+c);
+    	 }
+     }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  Scanner read = new Scanner(System.in);
+  int a = read.nextInt();
+  int b = read.nextInt();
+  int c = read.nextInt();
+  largest obj = new largest();
+  obj.num(a, b, c);
   
- Scanner input = new Scanner(System.in);
-System.out.println("Enter the values to check:");
-int num1 = input.nextInt();
-int num2 = input.nextInt();
-int num3 = input.nextInt();
-if(num1>num2 && num1>num3){
-System.out.println("Largest of three numbers is:"+num1);}
-else if(num2>num3){
-System.out.println("Largest of three numbers is:"+num2);
-}
-else{
-System.out.println("Largest of three numbers is:"+num3);
-}
-input.close();
-}
+  
+  
+	}
+
 }

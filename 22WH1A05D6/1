@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of products: ");
+        int numProducts = scanner.nextInt();
+
+        String maxProductName = "";
+        double maxProductValue = 0;
+
+        for (int i = 1; i <= numProducts; i++) {
+            System.out.println("Enter details for Product " + i + ":");
+            System.out.print("Product name: ");
+            String name = scanner.next();
+            System.out.print("Quantity: ");
+            int quantity = scanner.nextInt();
+            System.out.print("Cost per unit: $");
+            double cost = scanner.nextDouble();
+
+            double totalValue = quantity * cost;
+
+            if (totalValue > maxProductValue) {
+                maxProductValue = totalValue;
+                maxProductName = name;
+            }
+        }
+
+        if (!maxProductName.isEmpty()) {
+            System.out.println("Product with the highest value:");
+            System.out.println("Product: " + maxProductName);
+            System.out.println("Total value: $" + maxProductValue);
+        } else {
+            System.out.println("No products to display.");
+        }
+
+        scanner.close();
+    }
+}

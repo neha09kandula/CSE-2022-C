@@ -1,0 +1,14 @@
+package frames;
+
+interface shape {
+void printArea();
+}
+class Rectangle implements shape {
+int length;
+int width;
+
+Rectangle(int length, int width) {
+this.length = length;
+this.width = width;
+}
+...

@@ -1,0 +1,44 @@
+package javaprograms;
+import java.util.Scanner;
+interface Area{
+   public void printArea();
+}  
+
+class Rectangle implements Area{
+public void printArea(){
+     Scanner sc = new Scanner(System.in);
+     System.out.println(" enter the length");
+     System.out.println(" enter the breadth");
+     int l=sc.nextInt();
+     int b=sc.nextInt();
+     int arearec=l*b;
+ System.out.println(" area of rectangle:"+arearec);
+System.out.println(" ");
+ }
+ 
+}       
+class Triangle implements Area{
+public void printArea(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("enter the length");
+
+    System.out.println("enter the breadth");
+     int l=sc.nextInt();
+     int b=sc.nextInt();
+    double areatri= 0.5*l*b;
+    System.out.println(" area of triangle:"+areatri);
+    
+}
+}
+
+public class area {
+	public static void main(String args[]){
+	    Rectangle obj=new Rectangle();
+	    obj.printArea();
+	    Triangle t =new Triangle();
+	    t.printArea();
+	}
+
+}
+
+

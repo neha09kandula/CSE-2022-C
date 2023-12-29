@@ -1,0 +1,9 @@
+package Java22wh1a05g5;
+
+public class demo {
+
+	public static void main(String[] args) {
+ System.out.println("welome");
+	}
+
+}

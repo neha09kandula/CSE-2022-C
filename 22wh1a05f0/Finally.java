@@ -17,7 +17,7 @@ public class Finally {
 		     finally {
 		    	 System.out.println("Finally Block always excecutes");  //whether exception is handled
 		     }
-		     System.out.println("Exception Hnadled");
+		     System.out.println("Exception Handled");
 	       
 		}
 

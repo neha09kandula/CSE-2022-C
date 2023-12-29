@@ -1,21 +1,18 @@
 package frames;
 
-import java.io.IOException;  
-class finally_exception{  
-  void m()throws IOException{  
-    throw new IOException("device error");
-  }  
-  void n()throws IOException{  
-    m();  
-  }  
-  void p(){  
-   try{  
-    n();  
-   }catch(Exception e){System.out.println("exception handled");}  
-  }  
-  public static void main(String args[]){  
-   finally_exception obj=new finally_exception();  
-   obj.p();  
-   System.out.println("normal flow...");  
-  }  
-}  
+class finally_exception {    
+  public static void main(String args[]){    
+  try{    
+   int data=25/5;    
+   System.out.println(data);    
+  }    
+  catch(NullPointerException e){  
+System.out.println(e);  
+}     
+ finally {  
+System.out.println("finally block is always executed");  
+}    
+    
+System.out.println("rest of phe code...");    
+  }    
+}    

@@ -1,0 +1,27 @@
+//Define a class named Area which can be constructed by radius, length, and width.The Area 
+//class have two methods : carea() to calculate area of circle and rarea() to calculate area of 
+//rectangle
+//Sample Input & Output: Enter radius, length, and width - 4.5,12.2, 6.4
+//Area of circle with radius 4.50 is: 63.62
+//Area of rectangle with length 12.20 and width 6.40 is 78.08
+
+import math
+class Area:
+    def __init__(self, radius, length, width):
+        self.radius = radius
+        self.length = length
+        self.width = width
+
+    def carea(self):
+        circle_area = math.pi * self.radius ** 2
+        return circle_area
+
+    def rarea(self):
+        rectangle_area = self.length * self.width
+        return rectangle_area
+radius, length, width = map(float, input("Enter radius, length, and width - ").split(','))
+area_calculator = Area(radius, length, width)
+circle_area = area_calculator.carea()
+print(f"Area of circle with radius {radius:.2f} is: {circle_area:.2f}")
+rectangle_area = area_calculator.rarea()
+print(f"Area of rectangle with length {length:.2f} and width {width:.2f} is: {rectangle_area:.2f}")

@@ -1,0 +1,23 @@
+package cse225d1;
+import java.util.*;
+import java.lang.*;
+
+public class exception_handling {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		try {
+			int c=n1/n2;
+			System.out.println(c);
+		}
+		catch(ArithmeticException e) {
+			System.out.println("Zero division error!!!");
+		}
+		finally {
+			System.out.println("code is compiled successfuly");
+		}
+	}
+
+}

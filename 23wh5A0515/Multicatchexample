@@ -1,0 +1,32 @@
+package cse15;
+public class Multicatchexample
+{
+	public static void main (String[]args)
+	{
+		int arr[]= {5,10};
+		int b=5;
+		try
+		{
+			int x=arr[2]/(arr[0]-b);
+		}
+		catch(ArithmeticException ae)
+		{
+			System.out.println("divide by zero not possible");
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("can't possible to access an element out of Array bounds");
+		}
+		catch(ArrayStoreException e)
+		{
+			System.out.println("can't store different type of values");
+		}
+		finally
+		{
+			int y = arr[1]/arr[0];
+			System.out.println("y="+y);
+			
+		}
+	}
+
+}

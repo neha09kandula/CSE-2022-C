@@ -1,0 +1,21 @@
+package cse15;
+public class ThrowExample 
+{
+	void checkAge(int age)
+	{
+		if(age<18)
+			 throw new ArithmeticException("not Eligible for voting");
+		else
+			System.out.println("Eligible for voting");
+	}
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		ThrowExample obj = new ThrowExample();
+		obj.checkAge(13);
+		System.out.println("end of program");
+
+	}
+
+}

@@ -1,7 +1,7 @@
 package cse225e4;
 import java.io.File;
 import java.io.IOException;
-public class Filehandling {
+public class Exceptionhandling {
 	public static void main(String args[]){
 		int val1, val2;
 		try {

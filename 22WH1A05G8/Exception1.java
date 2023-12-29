@@ -1,6 +1,5 @@
-package internal;
+package programs;
 import java.util.*;
-import java.io.*;
 
 public class Exception1 {
 	public static void main(String[] args) {
@@ -13,6 +12,10 @@ public class Exception1 {
 	}
 	catch(ArithmeticException ae) {
 		System.out.println(ae);
+	}
+	finally
+	{
+		System.out.println("Program completed");
 	}
 	}
 }

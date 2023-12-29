@@ -1,13 +1,19 @@
-package internal;
+package programs;
+import java.util.*;
 
 public class Exception2 {
-	public static void main(String[] args) {
-		try {
-			String a=null;
-			System.out.println(a.charAt(0));
+	int a,b,c;
+	Scanner sc=new Scanner(System.in);
+	void method () throws ArithmeticException{
+		a=sc.nextInt();
+		b=sc.nextInt();
+		c=a*b;
+		if(c>=0) {
+			System.out.println("Area="+c);
 		}
-		catch(NullPointerException a) {
-			System.out.println(a);
+		else
+		{
+			throw new ArithmeticException("Mis match input");
 		}
 	}
 }

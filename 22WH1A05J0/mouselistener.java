@@ -1,0 +1,50 @@
+package priyanka5j0;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class mouselistener extends WindowAdapter implements MouseListener {
+
+    Label l;
+    Frame f;
+
+    public mouselistener() {
+        f = new Frame();
+        f.addMouseListener(this); // Pass the instance of the current class as the MouseListener
+        l = new Label();
+        l.setBounds(1000, 500, 300, 300); // Adjusted label size
+        f.add(l);
+        f.setSize(3000, 2000); // Set a specific width and height for the frame
+        f.setLayout(null); // Set layout to null for absolute positioning
+        f.setVisible(true);
+        f.addWindowListener(this); // Pass the instance of the current class as the WindowListener
+    }
+
+    public void mouseClicked(MouseEvent e) {
+        l.setText("Mouse Clicked");
+    }
+
+    public void mouseEntered(MouseEvent e) {
+        l.setText("Mouse Entered");
+    }
+
+    public void mouseExited(MouseEvent e) {
+        l.setText("Mouse Exited");
+    }
+
+    public void mouseReleased(MouseEvent e) {
+        l.setText("Mouse Released");
+    }
+
+    public void windowClosing(WindowEvent e) {
+        System.exit(0);
+    }
+
+    public void mousePressed(MouseEvent e) {
+        l.setText("Mouse Pressed");
+    }
+
+    public static void main(String args[]) {
+        new mouselistener();
+    }
+}

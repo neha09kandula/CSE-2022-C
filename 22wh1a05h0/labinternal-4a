@@ -1,0 +1,23 @@
+package javaprograms;
+
+
+ class vehicle{
+	 void driver() {
+		 System.out.println("driving a car");
+	 }
+class car extends vehicle{
+	void driver() {
+		System.out.println("repairing a car");
+	}
+}
+public class driver{
+	public static void main(String[]args) {
+		vehicle v=new vehicle();
+		v.driver();
+		
+		 car myCar = new car();
+	        myCar.driver();
+		
+	}
+ }
+}

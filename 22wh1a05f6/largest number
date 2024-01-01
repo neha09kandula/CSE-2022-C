@@ -1,0 +1,34 @@
+package mypackage;
+
+import java.util.Scanner;
+
+public class largest {
+     public void num(int a,int b,int c)
+     {
+    	 if(a>b && a>c )
+    	 {
+    		 System.out.println("Largest Number is "+a);
+    	 }
+    	 else if(b>c)
+    	 {System.out.println("Largest Number is "+b);
+    	 
+    	 }
+    	 else
+    	 {
+    		 System.out.println("Largest Number is "+c);
+    	 }
+     }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+  Scanner read = new Scanner(System.in);
+  int a = read.nextInt();
+  int b = read.nextInt();
+  int c = read.nextInt();
+  largest obj = new largest();
+  obj.num(a, b, c);
+  
+  
+  
+	}
+
+}

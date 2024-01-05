@@ -1,0 +1,14 @@
+package Java;
+import java.util.*;
+import java.util.Scanner;
+
+public class Evenoddthread extends Thread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    Evenoddthread thread1 = new Evenoddthread();
+    Evenoddthread thread2 = new Evenoddthread();
+    Evenoddthread thread3 = new Evenoddthread();
+    }
+
+}

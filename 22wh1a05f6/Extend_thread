@@ -1,0 +1,12 @@
+package javalab;
+
+public class Ex_threads extends Thread{
+public static void main (String[]args) {
+	Ex_threads t1=new Ex_threads();
+	t1.start();
+	System.out.println("hello");
+}
+	public void run() {
+		System.out.println("welcome");
+	}
+	}

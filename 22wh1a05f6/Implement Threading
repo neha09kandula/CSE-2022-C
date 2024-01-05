@@ -1,0 +1,15 @@
+package javalab;
+
+public class Imple_threads implements Runnable {
+public static void main (String[]args) {
+	Imple_threads t1=new Imple_threads();
+	Thread threads=new Thread(t1);
+	threads.start();
+	System.out.println("java lab");
+}
+	public void run() {
+		System.out.println("threads");
+		
+	}
+
+}

@@ -1,0 +1,27 @@
+package MYpkg;
+
+public class Multiple extends Thread{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Multiple t1=new Multiple();
+		t1.start();
+		t1.isAlive();
+		System.out.println("Creation of the t1 thread");
+	// TODO Auto-generated method stub
+		Multiple t2=new Multiple();
+		t2.start();
+		System.out.println("Creation of the T2 thread");
+		t2.sum(2,4);
+		t2.isAlive();
+		System.out.println("thread got executeded");
+	}
+		public void run() {
+			
+			System.out.println("This is inside of the run method");
+		}
+		public void sum(int a,int b) {
+			int s;
+			s=a+b;
+			System.out.println("This is the sum  " + s);
+		}
+	}

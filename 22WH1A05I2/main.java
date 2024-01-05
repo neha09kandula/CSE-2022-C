@@ -1,29 +1,26 @@
-import java.util.Scanner;
-class main
-{
-  public static void main(String args[])
-  {
-   System.out.println("Student details");
-   Scanner input=new Scanner(System.in);
-   System.out.println("Entr name");
-   String name=input.nextLine();
-   System.out.println("Student name is :" + name);
-
-System.out.println("Enter age");
-   int age=input.nextInt();
-   System.out.println("Student name is :" + age);
-
-System.out.println("Enter rollno.");
-   String rollno=input.nextLine();
-   System.out.println("Student rollno is :" + rollno);
+package cse5i2;
 
 
-System.out.println("Enter email");
-   String email=input.nextLine();
-   System.out.println("Student name is :" + email);
+public class main {
+	class A implements Runnable
+	{
+		A(){
+			Thread t=new Thread(new Thread());
+			t.start();
+			
+		}
+	
+		public void main(String args[])
+		{
+			System.out.println("Thread!");
+		}
+		
+		public void run()
+		{
+			new A();
+		}
+		
+	}
 
-
-
-
-  }
- }
+	
+}

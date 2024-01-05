@@ -1,0 +1,10 @@
+public class lab extends Thread {
+	public static void main (String[] args) {
+		lab Thread = new lab();
+		Thread.start();
+		System.out.println("Thread is good fellow");
+	}
+   public void run() {
+	   System.out.println("Thread is bad fellow");
+   }
+}

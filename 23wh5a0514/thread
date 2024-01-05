@@ -1,0 +1,22 @@
+package le514;
+
+public class thread {
+	public static void main(String args[]) throws InterruptedException {
+		Thread t1=new Thread();
+		t1.start();
+		System.out.println("t1 thread started");
+		Thread t2=new Thread();
+		t2.start();
+	System.out.println("t2 thread started");
+	t2.sleep(200);
+	System.out.println("t2 thread is sleeping");
+		System.out.println("t1 thread is running");
+	}
+	public void run() {
+	}
+	{
+		System.out.println(" t1 thread is running outside");
+	}
+	
+		
+	}

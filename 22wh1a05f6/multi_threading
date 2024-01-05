@@ -1,0 +1,29 @@
+package javalab;
+
+public class Multi_threads {
+    private static int counter = 0;
+    public static void incrementCounter() {
+        for (int i = 0; i < 5; i++) {
+            try {
+                Thread.sleep(100); 
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }    
+            counter++;
+        }
+        System.out.println(Thread.currentThread().getName() + " finished");
+    }
+    public static void main(String[] args) { 
+        Thread thread1 = new Thread(Multi_threads::incrementCounter);
+        Thread thread2 = new Thread(Multi_threads::incrementCounter); 
+        thread1.start();
+        thread2.start();
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }      
+        System.out.println("Final Counter Value: " + counter);
+    }
+}

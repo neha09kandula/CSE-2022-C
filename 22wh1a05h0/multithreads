@@ -1,0 +1,37 @@
+import java.util.*;
+public class main1 extends Thread {
+	public static void main(String[]args) {
+		main1 t1=new main1();
+		main1 t2=new main1();
+		try
+		{   t1.start();
+			t1.sleep(1500);
+			System.out.println("Thread is sleeping");
+			
+			t2.start();
+			t2.join();
+			t1.interrupt();
+		}
+		catch(InterruptedException  e)
+		{
+			System.out.println("thread got interrupted");
+		}
+	}
+        public void run()
+        {
+        	try {
+        		if(Thread.currentThread().getId()==1) {
+        			sleep(1000);
+        			System.out.println("THread 1 is running");
+        		}
+        		else
+        		{
+        			sleep(500);
+        			System.out.println("thread 2 is running");
+        		}
+        	}
+			catch(InterruptedException  e) {
+				System.out.println("thread"+Thread.currentThread().getId()+"got interrupted");
+			}
+        }
+}

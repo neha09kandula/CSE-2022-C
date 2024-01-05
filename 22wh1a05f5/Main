@@ -1,0 +1,16 @@
+package MYpkg;
+
+public class Main extends Thread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Main t=new Main();
+		t.start();
+		System.out.println("thread is running inside");
+		
+	}
+	public void run() {
+		System.out.println("thread is running outside");
+	}
+
+}

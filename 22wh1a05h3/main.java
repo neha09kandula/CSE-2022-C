@@ -1,33 +1,42 @@
-package labprograms;
+package cse5c4;
 import java.util.*;
-public class main {
-	    
-	
-	    public static void main(String[] args) {
-	        Cat myCat = new Cat();
-	        Dog myDog = new Dog();
 
-	        myCat.cats();
-	        myDog.dogs();
-	    }
+public class main extends Thread {
+
+	public static void main(String[]args) {
+		main t1=new main();
+		 main t2=new main();
+		try
+		{
+			t1.start();
+			t1.sleep(1500);
+			System.out.println("Thread 1 is sleeping");
+			
+			t2.start();
+			t2.join();
+			t1.interrupt();
+		}
+		catch(InterruptedException  e)
+		{
+			System.out.println("thread got interrupted");
+		}
 	}
-
-	abstract class Animals {
-	    abstract void cats();
-	    abstract void dogs();
+		public void run()
+		{
+			 try {
+		            if (Thread.currentThread().getId() == 1) {
+		                sleep(1000);
+		                System.out.println("Thread 1 is running");
+		            }
+		            else {
+		                
+		                sleep(500);
+		                System.out.println("Thread 2 is running");
+		            }
+		        } 
+			 catch (InterruptedException e) {
+		            System.out.println("Thread " + Thread.currentThread().getId() + " got interrupted");
+		        }
+		}
 	}
-
-	class Cat extends Animals {
-	    void cats() {
-	        System.out.println("Cats meow");
-	    }
-	}
-
-	class Dog extends Animals {
-	    void dogs() {
-	        System.out.println("Dogs bark");
-	    }
-	}
-
-
 

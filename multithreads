@@ -1,0 +1,90 @@
+import java.util.concurrent.*;
+
+public class MultiThreadExample {
+    public static void main(String[] args) {
+        // Create an ExecutorService with a fixed thread pool of size 3
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        // Create a shared data structure to pass numbers between threads
+        BlockingQueue<Integer> sharedQueue = new LinkedBlockingQueue<>();
+
+        // Start the first thread to generate numbers
+        executor.submit(new NumberGenerator(sharedQueue));
+
+        // Start the second thread to square the numbers
+        executor.submit(new Squarer(sharedQueue));
+
+        // Start the third thread to cube the numbers
+        executor.submit(new Cuber(sharedQueue));
+
+        // Shutdown the executor when all tasks are done
+        executor.shutdown();
+    }
+}
+
+class NumberGenerator implements Callable<Void> {
+    private BlockingQueue<Integer> sharedQueue;
+
+    public NumberGenerator(BlockingQueue<Integer> sharedQueue) {
+        this.sharedQueue = sharedQueue;
+    }
+
+    @Override
+    public Void call() {
+        try {
+            for (int i = 1; i <= 5; i++) {
+                sharedQueue.put(i);
+                Thread.sleep(100); // Simulate some work
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return null;
+    }
+}
+
+class Squarer implements Callable<Void> {
+    private BlockingQueue<Integer> sharedQueue;
+
+    public Squarer(BlockingQueue<Integer> sharedQueue) {
+        this.sharedQueue = sharedQueue;
+    }
+
+    @Override
+    public Void call() {
+        try {
+            while (true) {
+                int number = sharedQueue.take();
+                int square = number * number;
+                System.out.println("Squared: " + square);
+                Thread.sleep(100); // Simulate some work
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return null;
+    }
+}
+
+class Cuber implements Callable<Void> {
+    private BlockingQueue<Integer> sharedQueue;
+
+    public Cuber(BlockingQueue<Integer> sharedQueue) {
+        this.sharedQueue = sharedQueue;
+    }
+
+    @Override
+    public Void call() {
+        try {
+            while (true) {
+                int number = sharedQueue.take();
+                int cube = number * number * number;
+                System.out.println("Cubed: " + cube);
+                Thread.sleep(100); // Simulate some work
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return null;
+    }
+}

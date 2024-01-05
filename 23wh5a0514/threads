@@ -1,0 +1,14 @@
+package cse14;
+
+public class thread {
+	public static void main(String args[]) {
+		Thread t=new Thread();
+		t.start();
+		System.out.println("thread is running");
+	}
+	public void run() {
+	}
+	{
+		System.out.println("thread is running outside");
+	}
+	}

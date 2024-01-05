@@ -1,129 +1,94 @@
-package cse_225d3;
+package cse225d3;
+
 import java.awt.*;
+import java.awt.event.*;
+public class calculator extends Frame {
+    TextField enterField, field2,field3 ;
+    Button aButton,bButton,cButton,dButton;
+    public calculator() {
+        setTitle("Calculator");
+        setSize(400, 400);
+        setLayout(null);
+        Label enterLabel = new Label("Enter A value");
+        Label Label2 = new Label("Enter B value");
+        Label Label3 = new Label("result");
+        enterField = new TextField();
+        field2 = new TextField();
+        field3 = new TextField();
+        aButton = new Button("+");
+        bButton = new Button("-");
+        cButton = new Button("*");
+        dButton = new Button("/");
+        aButton.setBackground(Color.pink);
+        bButton.setBackground(Color.pink);
+        cButton.setBackground(Color.pink);
+        dButton.setBackground(Color.lightGray);
+        
+        enterLabel.setBounds(50,55,80,20);
+        enterField.setBounds(150, 50, 160, 30);
+        Label2.setBounds(50,85,80,20);
+        field2.setBounds(150, 80, 160, 30);
+        field3.setBounds(150, 110, 160, 30);
+        Label3.setBounds(50,115,80,20);
+        aButton.setBounds(70, 160, 40, 30);
+        bButton.setBounds(110, 160, 40, 30);
+        cButton.setBounds(150, 160, 40, 30);
+        dButton.setBounds(190, 160, 40, 30);
 
-import java.awt.event.ActionListener;
+        add(enterLabel);
+        add(enterField);
+        add(Label2);
+        add(field2);
+        add(Label3);
+        add(field3);
+        add(aButton);
+        add(bButton);
+        add(cButton);
+        add(dButton);
+        aButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	int i = Integer.parseInt(enterField.getText());
+            	int j = Integer.parseInt(field2.getText());
+            	field3.setText(String.valueOf(i+j));           	
+            }
+        });
+        bButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	int i = Integer.parseInt(enterField.getText());
+            	int j = Integer.parseInt(field2.getText());
+            	field3.setText(String.valueOf(i-j));
+            	
+            }
+        });
+        cButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	int i = Integer.parseInt(enterField.getText());
+            	int j = Integer.parseInt(field2.getText());
+            	field3.setText(String.valueOf(i*j));           	
+            }
+        });
+        dButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+            	int i = Integer.parseInt(enterField.getText());
+            	int j = Integer.parseInt(field2.getText());
+            	field3.setText(String.valueOf(i/j));
+            	
+            }
+        });
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+            }
+        });
 
-import java.awt.event.ActionEvent;
+        setVisible(true);
+    }
+	
 
-import java.awt.event.WindowAdapter;
-
-import java.awt.event.WindowEvent;
-
-class MyButton extends Frame {
-
-Button b1,b2,b3,b4,b5,b6,b7,n0,n1,n2,n3,n4,n5,n6,n7,n8,n9;
-
-Label l1;
-
-TextArea t1;
-
-String current,expression;
-
-Panel p;
-
-MyButton(){
-
-this.setLayout(new BorderLayout());
-
-p=new Panel(new GridLayout(4,4));
-
-b1=new Button("+");
-
-b2=new Button("-");
-
-b3=new Button("*");
-
-b4=new Button("/");
-
-b5=new Button("AC");
-
-b6=new Button("=");
-
-b7=new Button(".");
-
-n0=new Button("0");
-
-n1=new Button("1");
-
-n2=new Button("2");
-
-n3=new Button("3");
-
-n4=new Button("4");
-
-n5=new Button("5");
-
-n6=new Button("6");
-
-n7=new Button("7");
-
-n8=new Button("8");
-
-n9=new Button("9");
-
-this.add(p);
-
-p.add(n0);
-
-p.add(n1);
-
-p.add(n2);
-
-p.add(n3);
-
-p.add(n4);
-
-p.add(n5);
-
-p.add(n6);
-
-p.add(n7);
-
-p.add(n8);
-
-p.add(n9);
-
-p.add(b1);
-
-p.add(b2);
-
-p.add(b3);
-
-p.add(b4);
-
-p.add(b5);
-
-p.add(b6);
-
-t1 = new TextArea(5,5);
-
-this.add(t1,BorderLayout.NORTH);
-
-}
-
-}
-
-
-public class calculator {
 	public static void main(String[] args) {
+		new calculator();
+		// TODO Auto-generated method stub
 
-		MyButton f = new MyButton();
-
-		f.setVisible(true);
-
-		f.setSize(350,500);
-
-		f.addWindowListener(new MyClass());
-
-		}
-}
-
-class MyClass extends WindowAdapter {
-
-public void windowClosing(WindowEvent we) {
-
-System.exit(0);
-
-}
+	}
 
 }

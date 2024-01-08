@@ -1,28 +1,19 @@
 package newproject;
+public class quest1 extends Thread {
+	    public void run() {
+	        try {
+	            Thread.sleep(300);
+	            System.out.println("Run method executed by thread");
+	        } catch (InterruptedException ie) {
+	            // Handle interrupted exception if needed
+	        }
+	    }
 
-public class quest1 {
-		// TODO Auto-generated method stub
-		void drive()
-		   {
-			   System.out.println("driving a car");
-		   }
-
-		public class Car extends Vehicle{
-			 void drive()
-			{
-				System.out.println("Repairing a car");
-			}
-		}
-		}
-		public class quest1 {
-
-			public static void main(String args[])
-			{
-				Car obj=new Car();
-				obj.drive();
-			}
-
-
+	    public static void main(String[] args) {
+	        quest1 t1 = new quest1();
+	        System.out.println("Before starting thread isAlive: " + t1.isAlive());
+	        t1.start();
+	        System.out.println("After starting thread isAlive: " + t1.isAlive());
+	    }
 	}
-
 

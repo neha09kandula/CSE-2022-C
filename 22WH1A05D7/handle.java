@@ -1,4 +1,3 @@
-package labinternal1;
 
 import java.util.Scanner;
 
@@ -27,3 +26,6 @@ public class handle {
 	}
 
 }
+
+
+

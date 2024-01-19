@@ -1,0 +1,76 @@
+package cse225e4;
+import java.awt.*;
+public class Doublelinklist {
+int data;
+     Doublelinklist prev;
+     Doublelinklist next;
+    public Doublelinklist(int data) {
+        this.data = data;
+    }
+}
+class Doublylinklist {
+    private Doublelinklist head;
+    private Doublelinklist tail;
+    public void add(int data) {
+    	Doublelinklist newNode = new Doublelinklist(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+    }
+    public void addFirst(int data) {
+    	Doublelinklist newNode = new Doublelinklist(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+    }
+    public void remove(int data) {
+        if (head == null) return;
+        Doublelinklist current = head;
+        while (current != null) {
+            if (current.data == data) {
+                if (current.prev != null) {
+                    current.prev.next = current.next;
+                } else {
+                    head = current.next;
+                }
+
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                } else {
+                    tail = current.prev;
+                }
+                return;
+            }
+            current = current.next;
+        }
+    }
+    public void display() {
+    	Doublelinklist  current = head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
+    }
+    public static void main(String[] args) {
+    	Doublylinklist    list = new Doublylinklist ();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.display();
+        list.addFirst(0); 
+        list.display();
+        list.remove(2);
+        list.display(); 
+    }
+}

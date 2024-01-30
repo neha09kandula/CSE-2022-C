@@ -1,0 +1,64 @@
+package cse225d1;
+import java.util.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Frame1 extends Frame implements ActionListener {
+	
+Button b1,b2;
+Frame1(){
+	 addWindowListener (new WindowAdapter() {    
+         public void windowClosing (WindowEvent e) {    
+             dispose();    
+         }    
+     }); 
+	 
+setLayout(null);
+
+//create two buttons
+b1 = new Button("Next");
+b2 = new Button("Exit");
+
+//set location of button
+b1.setBounds(100, 100, 70, 40);
+b2.setBounds(200, 100, 70, 40);
+
+//add to frame
+add(b1);
+add(b2);
+
+//add action listener
+b1.addActionListener(this);
+b2.addActionListener(this);
+}
+public void actionPerformed(ActionEvent ae) {
+//if next button is clicked display Frame2
+
+if(ae.getSource()== b1)
+{
+//create Frame obj and display
+Frame f2 = new Frame();
+//Frame1 f2 = new Frame1();
+f2.setSize(400,400);
+f2.setVisible(true);
+f2.setTitle("Second Frame");
+Button b3 = new Button("Empty Button");
+f2.add(b3);
+b3.setBounds(200, 100, 70, 40);
+b3.setBackground(Color.ORANGE);
+}
+else
+{
+//if close button is clicked
+System.exit(0);
+}
+}
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+//create Frame 1
+Frame1 f1 = new Frame1();
+f1.setSize(500,500);
+f1.setTitle("First Frame");
+f1.setVisible(true);
+}
+}
